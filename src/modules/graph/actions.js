@@ -3,6 +3,9 @@ import { ADD_EDGES, ADD_ENTRY, ADD_NEIGHBOR, ADD_NODES, ADJ, CONTAINS, COPY,
 FROM_ELEMENTS, IS_ADJACENT, MERGE_EDGES, NEIGHBORS, NODES, REMOVE_EDGES,
 REMOVE_NODES, RESET_NODES, SPAWN, } from './constants';
 
+const createBin = (state, v) => state.concat(state.length);
+const create = (count = 1) => state => Array(count).fill(1).reduce(createBin, state);
+
 const addEdgesPermute = (src, w = 0) => (...nabes) => edges =>
 Graph.addEdges(edges)(src, w)(...nabes);
 

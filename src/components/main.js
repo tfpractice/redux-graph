@@ -2,8 +2,8 @@ import React, { Component, } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import logo from './logo.svg';
-import './App.css';
+import logo from './app/logo.svg';
+import './app/App.css';
 
 class App extends Component {
   render() {
