@@ -10,7 +10,7 @@ const addEdgesPermute = (src, w = 0) => (...nabes) => edges =>
 Graph.addEdges(edges)(src, w)(...nabes);
 
 export const addEdges = (s, w) => dispatch => (...nabes) =>
- ({ type: 'ADD_EDGES', curry: addEdgesPermute(s, w)(...nabes), });
+ ({ type: ADD_EDGES, curry: addEdgesPermute(s, w)(...nabes), });
 
 // export const addEntryPermute = nabes => ([ n, w = 0 ]) => addBinMap(nabes, [ n, w ]);
 // export const addEntry = nabes => ([ n, w = 0 ]) => addBinMap(nabes, [ n, w ]);
@@ -21,7 +21,7 @@ export const addEdges = (s, w) => dispatch => (...nabes) =>
 export const addNodesPermute = (...srcs) => edges => Graph.addNodes(edges)(srcs);
 
 export const addNodes = (...srcs) =>
-({ type: 'ADD_NODES', curry: addNodesPermute(...srcs), });
+({ type: ADD_NODES, curry: addNodesPermute(...srcs), });
 
 // export const adjPermute = edges => src => asMap(get(edges)(src));
 // export const adj = edges => src => asMap(get(edges)(src));
