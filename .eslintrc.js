@@ -1,5 +1,5 @@
 module.exports = {
-    extends: ['airbnb-base', ],
+    extends: ['airbnb', 'react-app'],
     settings: {
       'import/resolver': {
         'babel-module': {},
@@ -58,7 +58,7 @@ module.exports = {
         'no-empty-character-class': 2,
         'no-self-compare': 2,
         'valid-typeof': 2,
-        'no-unused-vars': 2,
+        'no-unused-vars': 0,
         'no-multi-spaces': [ 2, {
           exceptions: { Property: true },
         },],
