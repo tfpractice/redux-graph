@@ -1,0 +1,9 @@
+export const CREATE_NODES, = 'CREATE_NODES';
+export const DESTROY_NODES, = 'DESTROY_NODES';
+export const CLEAR_NODES, = 'CLEAR_NODES';
+export const UPDATE_NODES, = 'UPDATE_NODES';
+
+export const NODE_ACTIONS = new Set([CREATE_NODES,
+DESTROY_NODES,
+CLEAR_NODES,
+UPDATE_NODES, ]);
