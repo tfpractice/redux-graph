@@ -8,6 +8,7 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import { graphActs, nodeActs, } from '../modules';
 import Graph from './graph';
 import Nodes from './nodes';
+import Visualization from './visualization';
 const mapStateToProps = ({ nodes, graph, }) => ({ nodes, graph, });
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
           </p>
           <Nodes />
           <Graph />
+          <Visualization />
         </div>
 
       </MuiThemeProvider>
