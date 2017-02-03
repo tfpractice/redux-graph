@@ -1,10 +1,9 @@
 import { Graph, } from 'graph-curry';
-import { ADD_EDGES, ADD_ENTRY, ADD_NEIGHBOR, ADD_NODES, ADJ, CONTAINS, COPY,
-FROM_ELEMENTS, IS_ADJACENT, MERGE_EDGES, NEIGHBORS, NODES, REMOVE_EDGES,
-REMOVE_NODES, RESET_NODES, SPAWN, } from './constants';
+import { ADD_EDGES, ADD_NODES, FROM_ELEMENTS, MERGE_EDGES, NEIGHBORS, NODES,
+  REMOVE_EDGES, REMOVE_NODES, RESET_NODES, } from './constants';
 
-const createBin = (state, v) => state.concat(state.length);
-const create = (count = 1) => state => Array(count).fill(1).reduce(createBin, state);
+// const createBin = (state, v) => state.concat(state.length);
+// const create = (count = 1) => state => Array(count).fill(1).reduce(createBin, state);
 
 const addEdgesPermute = (src, w = 0) => (...nabes) => edges =>
 Graph.addEdges(edges)(src, w)(...nabes);
@@ -18,7 +17,7 @@ export const addEdges = (s, w) => dispatch => (...nabes) =>
 // export const addNeighborPermute = edges => src => (n, w = 0) =>
 // export const addNeighbor = edges => src => (n, w = 0) =>
 
-export const addNodesPermute = (...srcs) => edges => Graph.addNodes(edges)(srcs);
+const addNodesPermute = (...srcs) => edges => Graph.addNodes(edges)(srcs);
 
 export const addNodes = (...srcs) =>
 ({ type: ADD_NODES, curry: addNodesPermute(...srcs), });
@@ -53,8 +52,10 @@ export const addNodes = (...srcs) =>
 // export const nodesPermute = edges => spreadK(copy(edges));
 // export const nodes = edges => spreadK(copy(edges));
 
-// export const removeEdgesPermute = edges => src => (...nabes) =>
-// export const removeEdges = edges => src => (...nabes) =>
+export const removeEdgesPermute = src => (...nabes) => edges =>
+Graph.removeEdges(edges)(src)(...nabes);
+export const removeEdges = src => (...nabes) => edges =>
+({ type: REMOVE_EDGES, curry: removeEdgesPermute(src)(...nabes), });
 
 // export const removeNodesPermute = edges => (...srcs) =>
 // export const removeNodes = edges => (...srcs) =>
