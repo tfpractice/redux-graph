@@ -26,7 +26,6 @@ class App extends Component {
           </p>
           <Nodes />
           <Graph />
-          <Visualization />
         </div>
 
       </MuiThemeProvider>

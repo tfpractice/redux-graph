@@ -39,8 +39,8 @@ export const dragEnded = force => (d) => {
 
 export const updateLinks = (domLinks = d3.selectAll('.link')) => () => {
   domLinks
-    .attr('stroke', (d => color(d.source.player)))
-    .attr('stroke-width', 1)
+    .attr('stroke', '#00ff00')
+    .attr('stroke-width', 5)
     .attr('x1', ({ source: { x, }, }) => x)
     .attr('y1', ({ source: { y, }, }) => y)
     .attr('x2', ({ target: { x, }, }) => x)

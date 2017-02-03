@@ -20,6 +20,7 @@ const mapStateToProps = ({ graph, nodes, }) => {
   console.log('nodes', nodes);
   const links = graphLinks(graph);
   const omniLinks = links;
+
   const myForce = d3.forceSimulation(nodes)
     .force('charge', d3.forceManyBody())
     .force('link', d3.forceLink(omniLinks).distance(60).id(id => id))
@@ -32,7 +33,7 @@ const mapStateToProps = ({ graph, nodes, }) => {
     .on('start', dStart(myForce))
     .on('drag', dragged)
     .on('end', dEnd(myForce)));
-
+  console.log(links);
   return ({ links, });
 };
 

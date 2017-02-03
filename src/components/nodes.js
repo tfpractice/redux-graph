@@ -12,7 +12,7 @@ const Nodes = ({ nodes, createNodes, }) => (
     <h1>these are your nodes</h1>
     <FlatButton secondary label="create nodes" onClick={createNodes} />
     <ul>
-      { nodes.map((n, i) => <Node key={n} id={n} />) }
+      { nodes.map(n => <Node key={n.id} {...n} />) }
     </ul>
   </div>);
 
