@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect, } from 'react-redux';
-import { graphActs, } from '../modules';
-import Visualization from './visualization';
+import { graphActs, } from '../../modules';
+import Visualization from '../visualization';
 
 const mapStateToProps = ({ graph, nodes, }) => ({ graph, nodes, });
 

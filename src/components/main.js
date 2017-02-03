@@ -9,6 +9,8 @@ import { graphActs, nodeActs, } from '../modules';
 import Graph from './graph';
 import Nodes from './nodes';
 import Visualization from './visualization';
+
+import { NodeForm, } from './forms';
 const mapStateToProps = ({ nodes, graph, }) => ({ nodes, graph, });
 
 class App extends Component {
@@ -18,12 +20,10 @@ class App extends Component {
 
         <div className="App">
           <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
+            <h2>Graph redux</h2>
           </div>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
+          
+          <NodeForm />
           <Nodes />
           <Graph />
         </div>
