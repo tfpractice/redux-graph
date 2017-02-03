@@ -40,8 +40,10 @@ export const addNodes = (...srcs) =>
 // export const isAdjacentPermute = edges => src => nb => contains(adj(edges)(src))(nb);
 // export const isAdjacent = edges => src => nb => contains(adj(edges)(src))(nb);
 
-// export const mergeEdgesPermute = edges => (...alt) => alt.reduce(mergeEdgesBin, edges);
-// export const mergeEdges = edges => (...alt) => alt.reduce(mergeEdgesBin, edges);
+export const mergeEdgesPermute = (...alt) => edges =>
+ Graph.mergeEdges(edges)(...alt);
+export const mergeEdges = (...alt) =>
+({ type: MERGE_EDGES, curry: mergeEdgesPermute(...alt), });
 
 // export const mergeNeighborsPermute = uniteMap;
 // export const mergeNeighbors = uniteMap;
@@ -57,8 +59,10 @@ Graph.removeEdges(edges)(src)(...nabes);
 export const removeEdges = src => (...nabes) => edges =>
 ({ type: REMOVE_EDGES, curry: removeEdgesPermute(src)(...nabes), });
 
-// export const removeNodesPermute = edges => (...srcs) =>
-// export const removeNodes = edges => (...srcs) =>
+export const removeNodesPermute = (...srcs) => edges =>
+ Graph.removeNodes(...srcs)(edges);
+export const removeNodes = (...srcs) =>
+({ type: REMOVE_NODES, curry: removeNodesPermute(...srcs), });
 
 // export const resetNodesPermute = edges => (...src) => src.reduce(resetNodeBin, edges);
 // export const resetNodes = edges => (...src) => src.reduce(resetNodeBin, edges);
