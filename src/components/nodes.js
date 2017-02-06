@@ -10,10 +10,9 @@ const Nodes = ({ nodes, createNodes, }) => (
   <div>
     <h2>Nodes</h2>
     <h1>these are your nodes</h1>
-    <FlatButton secondary label="create nodes" onClick={createNodes} />
-    <ul>
+    <svg className="nodes">
       { nodes.map(n => <Node key={n.id} {...n} />) }
-    </ul>
+    </svg>
   </div>);
 
 export default connect(mapStateToProps, nodeActs)(Nodes);

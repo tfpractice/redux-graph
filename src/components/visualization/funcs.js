@@ -14,24 +14,29 @@ export const color = d3.scaleOrdinal()
 
 export const scaleX = d3.scaleLinear()
   .domain([ 0, 7, ])
-  .range([ 960 * 0.25, (960 * 0.75), ]);
+  .range([ 480 * 0.25, (480 * 0.75), ]);
 
 export const scaleY = d3.scaleLinear()
   .domain([ 0, 7, ])
-  .range([ 500 * 0.25, (500 * 0.75), ]);
+  .range([ 250 * 0.25, (250 * 0.75), ]);
 
 export const dragStarted = force => (d) => {
+  console.log('dragStarted', d);
   if (!d3.event.active) force.alphaTarget(0.3).restart();
   d3.event.x = d.fx = d.x;
   d3.event.y = d.fy = d.y;
 };
 
 export const dragged = force => (d) => {
+  console.log('dragged', d);
+  
   d.fx = d3.event.sourceEvent.x;
   d.fy = d3.event.sourceEvent.y;
 };
 
 export const dragEnded = force => (d) => {
+  console.log('dragEnded', d);
+  
   if (!d3.event.active) force.alphaTarget(0);
   d.fx = null;
   d.fy = null;
@@ -54,12 +59,16 @@ export const updateNodes = (domNodes = d3.selectAll('.nodeCircle')) => () => {
 };
 
 export const dStart = sim => (d) => {
+  console.log('dStart', d);
+  
   if (!d3.event.active) sim.alphaTarget(0.1).restart();
   d.fx = d.x;
   d.fy = d.y;
 };
 
 export const dEnd = sim => (d) => {
+  console.log('dEnd', d);
+  
   if (!d3.event.active) sim.alphaTarget(0.1);
   d.fx = null;
   d.fy = null;

@@ -17,7 +17,6 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme, { userAgent: false, })}>
-
         <div className="App">
           <div className="App-header">
             <h2>Graph redux</h2>
