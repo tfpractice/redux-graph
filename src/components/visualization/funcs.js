@@ -28,10 +28,10 @@ export const dragStarted = force => (d) => {
 };
 
 export const dragged = force => (d) => {
-  console.log('dragged', d);
+  console.log('dragged', d, d3.event);
   
-  d.fx = d3.event.sourceEvent.x;
-  d.fy = d3.event.sourceEvent.y;
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
 };
 
 export const dragEnded = force => (d) => {
