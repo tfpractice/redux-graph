@@ -10,7 +10,7 @@ import Graph from './graph';
 import Nodes from './nodes';
 import Visualization from './visualization';
 
-import { NodeForm, } from './forms';
+import { EdgeForm, NodeForm, Stepper, } from './forms';
 const mapStateToProps = ({ nodes, graph, }) => ({ nodes, graph, });
 
 class App extends Component {
@@ -21,9 +21,15 @@ class App extends Component {
           <div className="App-header">
             <h2>Graph redux</h2>
           </div>
-          
+          <EdgeForm />
           <NodeForm />
-          <Nodes />
+          <div className="row">
+            
+            <div className="col s12">
+              <Nodes />
+            </div>
+          </div>
+
           <Graph />
         </div>
 

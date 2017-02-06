@@ -10,7 +10,7 @@ const Nodes = ({ nodes, createNodes, }) => (
   <div>
     <h2>Nodes</h2>
     <h1>these are your nodes</h1>
-    <svg className="nodes">
+    <svg className="nodes col s12">
       { nodes.map(n => <Node key={n.id} {...n} />) }
     </svg>
   </div>);

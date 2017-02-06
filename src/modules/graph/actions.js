@@ -4,12 +4,13 @@ import { ADD_EDGES, ADD_NODES, FROM_ELEMENTS, MERGE_EDGES, NEIGHBORS, NODES,
 
 // const createBin = (state, v) => state.concat(state.length);
 // const create = (count = 1) => state => Array(count).fill(1).reduce(createBin, state);
-
 const addEdgesPermute = (src, w = 0) => (...nabes) => g =>
 Graph.addEdges(g)(src, w)(...nabes);
 
 export const addEdges = (s, w) => dispatch => (...nabes) =>
  ({ type: ADD_EDGES, curry: addEdgesPermute(s, w)(...nabes), });
+export const addEdgesForm = ({ source, weight, neighbors, }) =>
+  addEdges(source, weight, )(neighbors);
 
 // export const addEntryPermute = nabes => ([ n, w = 0 ]) => addBinMap(nabes, [ n, w ]);
 // export const addEntry = nabes => ([ n, w = 0 ]) => addBinMap(nabes, [ n, w ]);
